@@ -1,10 +1,14 @@
 <?php
 class m_surat extends CI_Model
 {
-	public function getSurat()
-	{
+
+    public function getSurat($number,$offset){
         $this->db->order_by('id', 'DESC');
-		return $this->db->get('surat');
+		return $query = $this->db->get('surat',$number,$offset)->result();		
+	}
+ 
+	public function jumlah_data(){
+		return $this->db->get('surat')->num_rows();
 	}
 
     public function ambil_data($keyword=null){

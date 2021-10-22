@@ -73,6 +73,11 @@
                                 <?php } ?>
                             </tbody>
                         </table>
+                        <nav aria-label="Page navigation">
+                            <?php 
+                            echo $this->pagination->create_links();
+                            ?>
+                        </nav>
                     </div>
                     <a href="<?= base_url(); ?>Surat_c/arsip" class="btn btn-primary">Arsipkan Surat...</a>
                 </div>
